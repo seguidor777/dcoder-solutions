@@ -25,6 +25,7 @@ fn main() {
             }
         }
 
+        // Find the position of the word 'Nemo'
         match words.iter().position(|&w| w == "Nemo") {
             Some(position) => println!("{}", position + 1),
             None => {}

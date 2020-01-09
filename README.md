@@ -1,4 +1,4 @@
 # Dcoder solutions
 
-Solution to Dcoder challenges in Rust
+Solutions to Dcoder challenges in Rust
 

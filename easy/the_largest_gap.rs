@@ -1,5 +1,3 @@
-//rust 1.30.0
-
 use std::io;
 
 // Find the largest gap

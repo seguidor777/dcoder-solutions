@@ -28,6 +28,5 @@ fn main() {
     }
 
     sortable.sort_by(|a, b| words_counter[b].cmp(&words_counter[a]));
-    sortable.dedup();
     println!("{}", sortable.join(" "));
 }

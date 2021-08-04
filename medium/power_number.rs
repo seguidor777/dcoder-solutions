@@ -2,11 +2,10 @@ use std::io::{self, BufRead};
 
 fn is_power(n: u64) -> bool {
     let mut pow: u64 = 1;
-    let mut result: u64;
+    let mut result: u64 = 0;
 
-    loop {
+    while result < n {
         result = pow.pow(pow as u32);
-        if result >= n { break }
         pow += 1;
     }
 

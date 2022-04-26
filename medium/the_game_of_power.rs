@@ -17,7 +17,6 @@ fn main() {
             continue;
         }
 
-        let mut i = n_sqrt_floor;
         let min = (n - n_sqrt_floor.pow(2)).min((n_sqrt_floor + 1).pow(2) - n);
 
         println!("{}", min);

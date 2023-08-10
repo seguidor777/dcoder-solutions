@@ -3,15 +3,22 @@ use std::io::{self, BufRead};
 fn main() {
     let stdin = io::stdin();
     let mut lines = stdin.lock().lines();
-    let mut input = lines.next().unwrap().expect("cannot read input");
-    let t: u8 = input.trim().parse().expect("cannot parse input");
+    let input = lines.next().unwrap().expect("cannot read input");
+    let t: u8 = input.parse().expect("cannot parse T");
 
     for _ in 0..t {
-        input = lines.next().unwrap().expect("cannot read input");
-        
-        let evens: String = input.chars().step_by(2).collect();
-        let odds: String = input.chars().skip(1).step_by(2).collect();
+        let word = lines.next().unwrap().expect("cannot read input");
+        let mut even = String::new();
+        let mut odd = String::new();
 
-        println!("{} {}", evens, odds);
+        for (i, b) in word.as_bytes().iter().enumerate() {
+            if i % 2 == 0 {
+                even.push(*b as char);
+            } else {
+                odd.push(*b as char);
+            }
+        }
+
+        println!("{} {}", even, odd);
     }
 }

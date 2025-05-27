@@ -55,7 +55,7 @@ fn main() {
     for row in matrix {
         let numbers = row.iter().map(|x| x.to_string()).collect::<Vec<String>>().join(" ");
 
-        println!("{}", numbers);
+        println!("{} ", numbers);
     }
 }
 
@@ -65,16 +65,14 @@ fn sieve(limit: usize) -> Vec<usize> {
     }
     let mut is_prime = vec![true; limit + 1];
     is_prime[0] = false;
-    if limit >= 1 {
-        is_prime[1] = false
-    }
+    is_prime[1] = false
 
     for n in 2..=((limit as f64).sqrt() as usize + 1) {
         if is_prime[n] {
             let mut multiple = n * n;
-            while multiple <= limit {
+
+            for multiple in (n * n..=limit).step_by(n) {
                 is_prime[multiple] = false;
-                multiple += n;
             }
         }
     }
